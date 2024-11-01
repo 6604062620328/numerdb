@@ -1,0 +1,13 @@
+-- CreateTable
+CREATE TABLE "Root" (
+    "id" SERIAL NOT NULL,
+    "solution" TEXT NOT NULL,
+    "equation" TEXT NOT NULL,
+    "xStart" DOUBLE PRECISION NOT NULL,
+    "xEnd" DOUBLE PRECISION NOT NULL,
+    "error" DOUBLE PRECISION NOT NULL,
+    "result" DOUBLE PRECISION NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "Root_pkey" PRIMARY KEY ("id")
+);
