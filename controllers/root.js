@@ -25,7 +25,7 @@ export const list = async (req, res) => {
     const alldata = await prisma.root.findMany();
     res.json(alldata);
   } catch (error) {
-    res.status(500).send("error");
+    res.status(500).send("error cant get data");
   }
 };
 
@@ -39,6 +39,6 @@ export const readsol = async (req, res) => {
     });
     res.json(roots);
   } catch (error) {
-    res.status(500).send("error");
+    res.status(500).send("error cant get solution");
   }
 };
