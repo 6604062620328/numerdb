@@ -37,7 +37,7 @@ export const create = async (req, res) => {
 // ฟังก์ชันดึงข้อมูลทั้งหมด
 export const list = async (req, res) => {
   try {
-    const alldata = await prisma.root.findMany();
+    const alldata = await prisma.intregrate.findMany();
     res.json(alldata);
   } catch (error) {
     console.error(error); // Log ข้อความ error เพื่อการ debug
