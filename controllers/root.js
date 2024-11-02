@@ -46,11 +46,11 @@ export const createIT = async (req, res) => {
     const newdataroot = await prisma.root.create({
       data: {
         solution: solution,
-        aValue: parseFloat(aValue),
-        bValue: parseFloat(bValue),
+        aValue: Number(aValue),
+        bValue: Number(bValue),
         Equation: Equation,
-        error: parseFloat(hValue),
-        result: parseFloat(result),
+        error: Number(hValue),
+        result: Number(result),
       },
     });
     res.json({ newdatacomposimp });
