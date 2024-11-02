@@ -56,10 +56,11 @@ export const readsol = async (req, res) => {
     });
     res.json(roots);
   } catch (error) {
-    console.error(error); // Log ข้อความ error เพื่อการ debug
+    console.error(error); // Log error for debugging
     res.status(500).send(`Error: ${error.message}`);
   }
 };
+
 
 // รองรับการปิดการเชื่อมต่อเมื่อแอปปิดตัว
 process.on('SIGTERM', async () => {

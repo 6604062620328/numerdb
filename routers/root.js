@@ -159,4 +159,7 @@ router.get("/root", list);
 router.post("/root", create);
 router.get("/root/:solution", readsol);
 
+router.post("/intregrate", create);
+router.get("/intregrate", list);
+
 export default router;
