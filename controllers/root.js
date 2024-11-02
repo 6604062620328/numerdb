@@ -34,54 +34,7 @@ export const create = async (req, res) => {
   }
 };
 
-export const createIT = async (req, res) => {
-  try {
-    const { solution, aValue, bValue,Equation,hValue,result } = req.body;
-
-    // ตรวจสอบ input
-    if (!solution || isNaN(aValue) || isNaN(bValue) || !Equation || isNaN(hValue)|| isNaN(result)) {
-      return res.status(400).send("Invalid input data");
-    }
-
-    const newdatacomposimp = await prisma.composimp.create({
-      data: {
-        solution: solution,
-        aValue: Number(aValue),
-        bValue: Number(bValue),
-        Equation: Equation,
-        error: parseFloat(hValue),
-        result: parseFloat(result),
-      },
-    });
-    res.json({ newdatacomposimp });
-  } catch (err) {
-    console.error(err); // Log ข้อความ error เพื่อการ debug
-    res.status(500).send(`Error: ${err.message}`);
-  }
-};
-
-
 // ฟังก์ชันดึงข้อมูลทั้งหมด
-export const list = async (req, res) => {
-  try {
-    const alldata = await prisma.root.findMany();
-    res.json(alldata);
-  } catch (error) {
-    console.error(error); // Log ข้อความ error เพื่อการ debug
-    res.status(500).send(`Error: ${error.message}`);
-  }
-};
-
-export const listIT = async (req, res) => {
-  try {
-    const alldata = await prisma.intregrate.findMany();
-    res.json(alldata);
-  } catch (error) {
-    console.error(error); // Log ข้อความ error เพื่อการ debug
-    res.status(500).send(`Error: ${error.message}`);
-  }
-};
-
 // ฟังก์ชันค้นหาข้อมูลด้วย solution
 export const readsol = async (req, res) => {
   try {

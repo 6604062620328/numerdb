@@ -1,7 +1,8 @@
 import express from "express";
 const router = express.Router();
 
-import { create, list,listIT, readsol } from "../controllers/root.js";
+import { create, list, readsol } from "../controllers/root.js";
+import { createIT, listIT } from "../controllers/intregrate.js";
 
 /**
  * @swagger
@@ -159,7 +160,7 @@ router.get("/root", list);
 router.post("/root", create);
 router.get("/root/:solution", readsol);
 
-router.post("/intregrate", create);
+router.post("/intregrate", createIT);
 router.get("/intregrate", listIT);
 
 export default router;
