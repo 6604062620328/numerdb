@@ -43,14 +43,14 @@ export const createIT = async (req, res) => {
       return res.status(400).send("Invalid input data");
     }
 
-    const newdataroot = await prisma.root.create({
+    const newdatacomposimp = await prisma.root.create({
       data: {
         solution: solution,
         aValue: Number(aValue),
         bValue: Number(bValue),
         Equation: Equation,
-        error: Number(hValue),
-        result: Number(result),
+        error: parseFloat(hValue),
+        result: parseFloat(result),
       },
     });
     res.json({ newdatacomposimp });
