@@ -157,8 +157,8 @@ router.get("/root", list);
  *         description: มีข้อผิดพลาดในการสร้างข้อมูล root ใหม่
  */
 
-/*router.post("/root", create);
-router.get("/root/:solution", readsol);*/
+router.post("/root", create);
+router.get("/root/:solution", readsol);
 
 router.post("/intregrate", createIT);
 router.get("/intregrate", listIT);
